@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+
+@import "tailwindcss";
+
+a.active hr{
+display: block;
+}
+*{
+font-family: Outfit;
+}
+.prata-regular {
+font-family: "Prata", serif;
+font-weight: 400;
+font-style: normal;
+}
+
+::-webkit-scrollbar{
+display: none;
+}
+
+@media (max-width:640px) {
+a.active{
+background-color:  black;
+color: white;
+}
+
+}
+/* Background gradient pulse */
+/* Background gradient pulse */
+@keyframes gradient-pulse {
+0% { background-position: 0% 0%; }
+50% { background-position: 100% 100%; }
+100% { background-position: 0% 0%; }
+}
+.animate-gradient-pulse {
+background-size: 200% 200%;
+animation: gradient-pulse 20s ease infinite alternate;
+}
+
+/* Abstract Blob Floating */
+@keyframes blob-float-one {
+0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.05; }
+33% { transform: translate(25px, 15px) scale(1.1) rotate(15deg); opacity: 0.08; }
+66% { transform: translate(-10px, -20px) scale(0.9) rotate(-10deg); opacity: 0.06; }
+}
+@keyframes blob-float-two {
+0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.05; }
+33% { transform: translate(-15px, 25px) scale(0.95) rotate(-12deg); opacity: 0.07; }
+66% { transform: translate(20px, -15px) scale(1.05) rotate(8deg); opacity: 0.06; }
+}
+@keyframes blob-float-three {
+0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.05; }
+33% { transform: translate(30px, -10px) scale(1.1) rotate(20deg); opacity: 0.09; }
+66% { transform: translate(-20px, 5px) scale(0.9) rotate(-15deg); opacity: 0.07; }
+}
+.animate-blob-float-one { animation: blob-float-one 25s infinite ease-in-out; }
+.animate-blob-float-two { animation: blob-float-two 28s infinite alternate ease-in-out; }
+.animate-blob-float-three { animation: blob-float-three 22s infinite ease-out; }
+
+/* Card slide-up and fade-in */
+@keyframes card-slide-up {
+0% {
+opacity: 0;
+transform: translateY(50px) scale(0.9);
+}
+100% {
+opacity: 1;
+transform: translateY(0) scale(1);
+}
+}
+.animate-card-slide-up {
+animation: card-slide-up 0.8s ease-out forwards;
+}
+
+/* Text fade-in with bounce from bottom */
+@keyframes title-fade-in {
+0% { opacity: 0; transform: translateY(20px); }
+80% { opacity: 1; transform: translateY(-5px); }
+100% { opacity: 1; transform: translateY(0); }
+}
+.animate-title-fade-in { animation: title-fade-in 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s forwards; opacity: 0; }
+
+@keyframes subtitle-fade-in {
+0% { opacity: 0; transform: translateY(20px); }
+80% { opacity: 1; transform: translateY(-5px); }
+100% { opacity: 1; transform: translateY(0); }
+}
+.animate-subtitle-fade-in { animation: subtitle-fade-in 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards; opacity: 0; }
+
+
+/* Generic element reveal (fade and slight translate) */
+@keyframes element-reveal {
+from { opacity: 0; transform: translateY(15px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-element-reveal { animation: element-reveal 0.6s ease-out forwards; opacity: 0; }
+.animate-element-reveal.delay-1 { animation-delay: 0.3s; }
+.animate-element-reveal.delay-2 { animation-delay: 0.4s; }
+.animate-element-reveal.delay-3 { animation-delay: 0.5s; }
+.animate-element-reveal.delay-4 { animation-delay: 0.6s; }
+.animate-element-reveal.delay-5 { animation-delay: 0.7s; }
+
+/* Input highlight on focus (brief pulse, then solid ring) */
+@keyframes input-focus-highlight {
+0% { box-shadow: 0 0 0px rgba(129, 93, 199, 0); } /* Updated color for pulse */
+50% { box-shadow: 0 0 12px rgba(129, 93, 199, 0.3); } /* Updated color for pulse */
+100% { box-shadow: 0 0 0px rgba(129, 93, 199, 0); } /* Updated color for pulse */
+}
+input:focus.animate-input-focus-highlight {
+animation: input-focus-highlight 0.8s ease-out; /* Play once on focus */
+}
+
+/* Button bounce on load/initial appearance */
+@keyframes button-bounce {
+0% { opacity: 0; transform: scale(0.8); }
+60% { opacity: 1; transform: scale(1.05); }
+100% { opacity: 1; transform: scale(1); }
+}
+.animate-button-bounce { animation: button-bounce 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s forwards; opacity: 0; }
+
+/* Message box animation */
+@keyframes fade-in-down {
+from {
+opacity: 0;
+transform: translate(-50%, -20px);
+}
+to {
+opacity: 1;
+transform: translate(-50%, 0);
+}
+}
+.animate-fade-in-down {
+animation: fade-in-down 0.5s ease-out forwards;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+@keyframes image-reveal {
+from { opacity: 0; transform: scale(0.95); }
+to { opacity: 1; transform: scale(1); }
+}
+.animate-image-reveal {
+animation: image-reveal 0.8s ease-out forwards;
+}
+
+@keyframes image-reveal-small {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-image-reveal-small {
+animation: image-reveal-small 0.7s ease-out forwards;
+}
+
+@keyframes text-reveal {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-text-reveal {
+animation: text-reveal 0.8s ease-out forwards;
+}
+
+@keyframes feature-card-pop {
+0% { opacity: 0; transform: translateY(30px) scale(0.9); }
+70% { opacity: 1; transform: translateY(-5px) scale(1.02); }
+100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-feature-card-pop {
+animation: feature-card-pop 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+opacity: 0; /* Hidden until animated */
+}
+
+@keyframes button-glow {
+0% { box-shadow: 0 0 0px rgba(139, 92, 246, 0.4); }
+50% { box-shadow: 0 0 15px rgba(139, 92, 246, 0.8); }
+100% { box-shadow: 0 0 0px rgba(139, 92, 246, 0.4); }
+}
+.animate-button-glow:hover {
+animation: button-glow 1.5s infinite alternate;
+}
+/* Animation delays (adjusted for Contact page flow) */
+  /* Animation delays (adjusted for Contact page flow) */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* Background Pulse Subtle (reused from About) */
+@keyframes background-pulse-subtle {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+}
+.animate-background-pulse-subtle {
+  background-size: 200% 200%;
+  animation: background-pulse-subtle 30s ease infinite alternate;
+}
+
+/* Image Reveal with Fade (reused from About) */
+@keyframes image-reveal-fade {
+  from { opacity: 0; transform: scale(0.9); filter: blur(5px); }
+  to { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+.animate-image-reveal-fade {
+  animation: image-reveal-fade 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}
+
+/* Text Slide and Fade In (reused from About) */
+@keyframes text-slide-fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-text-slide-fade {
+  animation: text-slide-fade 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}
+
+/* Input/Textarea focus highlight (reused from Login) */
+@keyframes input-focus-highlight {
+  0% { box-shadow: 0 0 0px rgba(129, 93, 199, 0); }
+  50% { box-shadow: 0 0 12px rgba(129, 93, 199, 0.3); }
+  100% { box-shadow: 0 0 0px rgba(129, 93, 199, 0); }
+}
+input:focus.animate-input-focus-highlight, textarea:focus.animate-input-focus-highlight {
+    animation: input-focus-highlight 0.8s ease-out;
+}
+
+/* Button Slide and Bounce In (reused from About) */
+@keyframes button-slide-bounce {
+  0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+  60% { opacity: 1; transform: translateY(-5px) scale(1.05); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-button-slide-bounce {
+  animation: button-slide-bounce 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  opacity: 0;
+}
+
+/* Feature Card Bounce In (reused from About) - used for Contact Info blocks */
+@keyframes feature-card-bounce {
+  0% { opacity: 0; transform: translateY(30px) scale(0.8); }
+  60% { opacity: 1; transform: translateY(-5px) scale(1.05); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-feature-card-bounce {
+  animation: feature-card-bounce 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  opacity: 0; /* Hidden until animated */
+}
+
+/* Message box animation */
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+.animate-fade-in-down {
+  animation: fade-in-down 0.5s ease-out forwards;
+}
+
+/* General ease-out-expo (from previous versions, kept for consistency) */
+.ease-out-expo {
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+/* Animation delays (adjusted for sequential reveal) */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* Background Pulse Subtle (reused from previous, very slow ambient movement) */
+@keyframes background-pulse-subtle {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+}
+.animate-background-pulse-subtle {
+  background-size: 200% 200%;
+  animation: background-pulse-subtle 30s ease infinite alternate;
+}
+
+/* Image Reveal with Fade (smoother, more subtle than a pop) */
+@keyframes image-reveal-fade {
+  from { opacity: 0; transform: translateY(20px); filter: blur(5px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.animate-image-reveal-fade {
+  animation: image-reveal-fade 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}
+
+/* Text Slide and Fade In (for main paragraphs) */
+@keyframes text-slide-fade {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-text-slide-fade {
+  animation: text-slide-fade 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}
+
+/* Feature Card Pop-in (new, distinct from previous bounces/swirls) */
+@keyframes feature-card-pop {
+  0% { opacity: 0; transform: scale(0.8); }
+  80% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-feature-card-pop {
+  animation: feature-card-pop 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  opacity: 0; /* Hidden until animated */
+}
+
+/* Button Glow (reused from previous, on hover) */
+@keyframes button-glow {
+    0% { box-shadow: 0 0 0px rgba(139, 92, 246, 0.4); }
+    50% { box-shadow: 0 0 15px rgba(139, 92, 246, 0.8); }
+    100% { box-shadow: 0 0 0px rgba(139, 92, 246, 0.4); }
+}
+.animate-button-glow:hover {
+    animation: button-glow 1.5s infinite alternate;
+}
+
+/* General ease-out-expo (kept for overall section transitions) */
+.ease-out-expo {
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+@layer utilities {
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes card-slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes button-bounce {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes blob-float-one {
+    0%, 100% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(-20px, 20px);
+    }
+  }
+
+  @keyframes blob-float-two {
+    0%, 100% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(20px, -20px);
+    }
+  }
+
+  @keyframes blob-float-three {
+    0%, 100% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(-10px, -30px);
+    }
+  }
+
+  .animate-fade-in-down {
+    animation: fade-in-down 0.5s ease-out;
+  }
+
+  .animate-card-slide-up {
+    animation: card-slide-up 0.8s ease-out;
+  }
+
+  .animate-button-bounce {
+    animation: button-bounce 0.6s infinite;
+  }
+
+  .animate-blob-float-one {
+    animation: blob-float-one 8s ease-in-out infinite;
+  }
+
+  .animate-blob-float-two {
+    animation: blob-float-two 10s ease-in-out infinite;
+  }
+
+  .animate-blob-float-three {
+    animation: blob-float-three 12s ease-in-out infinite;
+  }
+}
+@keyframes blob-float-one {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes blob-float-two {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 30px) scale(0.95);
+  }
+  66% {
+    transform: translate(20px, -40px) scale(1.05);
+  }
+}
+
+@keyframes blob-float-three {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(50px, 10px) scale(1.02);
+  }
+  66% {
+    transform: translate(-30px, -30px) scale(0.98);
+  }
+}
+
+@keyframes blob-float-four {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-25px, -15px) scale(1.08);
+  }
+  66% {
+    transform: translate(35px, 25px) scale(0.92);
+  }
+}
